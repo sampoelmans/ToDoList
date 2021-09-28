@@ -1,0 +1,11 @@
+.is-complete{
+    text-decoration: line-through;
+}
+
+.close:hover {
+   color: red;
+}
+
+h3{
+  font-size: 10px;
+}

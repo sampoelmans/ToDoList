@@ -1,0 +1,22 @@
+<div class="card" style="width: 18rem;" [ngClass]="setCompleted()">
+  <button type="button" class="close" aria-label="Close" (click)="deleteTodo(todo)" title="Delete Task!">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="card-body">
+    <h5 class="card-title">{{ todo.title }}</h5>
+    <p class="card-text">{{ todo.catogorie }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ todo.description }}</li>
+  </ul>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <a href="#" class="card-link" (click)="completeTodo(todo)">Complete</a>
+      </div>
+      <div class="col">
+        <a href="#" class="card-link" (click)="deleteTodo(todo)">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
