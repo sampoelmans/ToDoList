@@ -1,4 +1,5 @@
-<div class="card" style="width: 18rem;" [ngClass]="setCompleted()">
+
+<div class="card" style="width: 18rem;" [ngClass]="setCompleted()" [ngStyle]="{'background-color':todo.color}">
   <button type="button" class="close" aria-label="Close" (click)="deleteTodo(todo)" title="Delete Task!">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -6,8 +7,8 @@
     <h5 class="card-title">{{ todo.title }}</h5>
     <p class="card-text">{{ todo.catogorie }}</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{ todo.description }}</li>
+  <ul class="list-group list-group-flush" >
+    <li class="list-group-item" [ngStyle]="{'background-color':todo.color}">{{ todo.description }}</li>
   </ul>
   <div class="card-body">
     <div class="row">
