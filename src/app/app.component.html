@@ -1,18 +1,7 @@
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="Angular Logo"
-    src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png"  />
-  <span>To Do Application</span>
-    <div class="spacer"></div>
-</div>
 
-<!-- Content -->
 <div class="content" role="main">
-  <a routerLink="/components/add-todo" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Add To DO</a>
-  <h2>To Do List</h2>
-  <app-todos></app-todos>
+  <app-menu></app-menu>
+  <router-outlet></router-outlet>
 </div>
 
-<router-outlet></router-outlet>
+

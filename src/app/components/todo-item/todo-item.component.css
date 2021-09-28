@@ -1,11 +1,39 @@
+
 .is-complete{
     text-decoration: line-through;
 }
-
+.card-title{
+  text-align: center;
+  font-size: 25px;
+}
+.t-titels{
+  font-weight: bold;
+}
 .close:hover {
    color: red;
 }
-
+.close{
+  font-size: 25px;
+}
 h3{
   font-size: 10px;
+}
+.card{
+  margin-bottom: 50px;
+}
+.checkbtn{
+  background-color: transparent;
+  border: none;
+  border-color: transparent;
+  font-size: 25px;
+}
+.checkicon{
+  color: green;
+}
+.col{
+  text-align: center;
+}
+.card-body{
+  padding-bottom: 2px;
+  padding-top: 2px;
 }

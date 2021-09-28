@@ -3,8 +3,8 @@
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   color: #333;
-}
 
+}
 h1,
 h2,
 h3,
@@ -22,25 +22,10 @@ p {
   flex: 1;
 }
 
-.toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  background-color: rgb(90, 72, 95);
-  color: white;
-  font-weight: 600;
-}
 
-.toolbar img {
-  margin: 0 16px;
-}
 
 .content {
-  width: 1000px;
+  width: 1500px;
   margin: 82px auto 32px;
   padding: 5px 16px;
   align-items: center;

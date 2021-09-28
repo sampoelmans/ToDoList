@@ -7,10 +7,13 @@ import { TodosComponent } from "./components/todos/todos.component";
 import { TodoItemComponent } from "./components/todo-item/todo-item.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
-import { AddTodoComponent } from './components/add-todo/add-todo.component'
+import { AddTodoComponent } from './components/add-todo/add-todo.component';
+import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
+import { TodosmanageComponent } from './todosmanage/todosmanage.component'
 
 @NgModule({
-  declarations: [AppComponent, TodosComponent, TodoItemComponent, AddTodoComponent],
+  declarations: [AppComponent, TodosComponent, TodoItemComponent, AddTodoComponent, HomeComponent, MenuComponent, TodosmanageComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

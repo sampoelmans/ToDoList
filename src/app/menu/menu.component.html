@@ -1,0 +1,14 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    alt="Angular Logo"
+    src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png"  />
+  <span>To Do Application</span>
+    <div class="spacer"></div>
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+        <li><a routerLink="/todolist" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">To Do List</a></li>
+        <li><a routerLink="/addtodo" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Add To Do</a></li>
+  </ul>
+</div>

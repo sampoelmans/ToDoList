@@ -5,19 +5,23 @@
   </button>
   <div class="card-body">
     <h5 class="card-title">{{ todo.title }}</h5>
-    <p class="card-text">{{ todo.catogorie }}</p>
+    <hr>
+    <span class="t-titels">Catogorie:</span><p class="card-text">{{ todo.catogorie }}</p>
   </div>
-  <ul class="list-group list-group-flush" >
-    <li class="list-group-item" [ngStyle]="{'background-color':todo.color}">{{ todo.description }}</li>
-  </ul>
+  <hr>
+  <div class="card-body">
+    <span class="t-titels">Description:</span><p class="card-text">{{ todo.description }}</p>
+  </div>
+<hr>
   <div class="card-body">
     <div class="row">
       <div class="col">
-        <a href="#" class="card-link" (click)="completeTodo(todo)">Complete</a>
+        <button type="button" class="checkbtn" (click)="completeTodo(todo)"><i class="fa fa-check checkicon"></i></button>
       </div>
       <div class="col">
-        <a href="#" class="card-link" (click)="deleteTodo(todo)">Delete</a>
+        <button type="button" class="checkbtn" (click)="deleteTodo(todo)"><i class="fa fa-edit"></i></button>
       </div>
     </div>
+    <br>
   </div>
 </div>
