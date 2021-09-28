@@ -10,6 +10,7 @@ export class AddTodoComponent implements OnInit {
   description:string;
   catogorie:string;
   color:string;
+  startdate:Date;
   @Output() addTodo : EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -25,6 +26,7 @@ export class AddTodoComponent implements OnInit {
       catogorie : this.catogorie,
       description : this.description,
       color : this.color,
+      startdate : new Date(),
       completed:false
     }
     this.addTodo.emit(todo);

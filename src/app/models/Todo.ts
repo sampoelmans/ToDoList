@@ -4,5 +4,6 @@ export class Todo {
   catogorie:string;
   description: string;
   color:string;
+  startdate:Date;
   completed: boolean;
 }

@@ -11,13 +11,16 @@
   font-weight: 600;
 }
 
+h5{
+  text-transform: uppercase;
+}
 .toolbar img {
   margin: 0 16px;
 }
 .toolbar ul {
   display: flex;
   list-style-type: none;
-  padding: 0px;
+  padding-top: 15px;
 }
 
 .toolbar li {
@@ -29,8 +32,9 @@
   flex: 1 1 auto;
   text-decoration: none;
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   color: white;
+  font-size: 15px;
 }
 
 .toolbar a.active {

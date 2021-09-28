@@ -2,18 +2,17 @@
     <label for="task">Task:</label>
     <input type="text" name="task" class="form-control" placeholder="Enter task here" [(ngModel)]="task">
     <label for="task">Catogorie:</label>
-    <input type="text" name="catogorie" class="form-control" placeholder="Enter description here" [(ngModel)]="catogorie">
-
+    <input type="text" name="catogorie" class="form-control" placeholder="Enter catogorie here" [(ngModel)]="catogorie">
     <label for="task">Description:</label>
     <textarea type="text" name="description" class="form-control" placeholder="Enter description here" [(ngModel)]="description"></textarea>
 
 
       <label for="task">Color:</label>
       <select class="form-control" [(ngModel)]="color" [ngStyle]="{'background-color':color}">
-        <option value="lightblue">Blue</option>
-        <option value="lightgreen">Green</option>
-        <option value="lightyellow">Yellow</option>
-        <option value="lightcoral">Red</option>
+        <option class="lightblue" value="lightblue">Blue</option>
+        <option class="lightgreen" value="lightgreen">Green</option>
+        <option class="lightyellow" value="lightyellow">Yellow</option>
+        <option class="lightcoral" value="lightcoral">Red</option>
       </select>
       <br>
       <a routerLink="/todolist" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><button class="btn btn-primary" type="button" title="Save Task!" (click)= "saveTask()"><i class="fa fa-check"></i>ADD TODO</button></a>
