@@ -6,14 +6,14 @@ import {Observable, Subscription} from 'rxjs';
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.css']
+  styleUrls: ['./add-todo.component.scss']
 })
 export class AddTodoComponent implements OnInit, OnDestroy{
   isAdd: boolean = false;
   isEdit: boolean = false;
 
   todoId: number = 0;
-  todo : Todo = {id:0, title:"", description:"",catogorie:"",color:"", startdate: new Date(),completed:false};
+  todo : Todo = {id:0, title:"", description:"",color:"", startdate: new Date(),completed:false,itemId:0};
 
   isSubmitted: boolean = false;
   errorMessage: string = "";

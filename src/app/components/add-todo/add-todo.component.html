@@ -11,11 +11,6 @@
            #title="ngModel" required>
     <div [hidden]="title.valid || title.pristine" class="alert alert-danger">Title is required</div>
     
-    <label for="category">Category</label>
-    <input type="text" class="form-control" id="category" name="category" placeholder="category" [(ngModel)]="todo.catogorie"
-           #category="ngModel" required>
-    <div [hidden]="category.valid || category.pristine" class="alert alert-danger">Category is required</div>
-    
     <label for="description">Description</label>
     <input type="text" class="form-control" id="description" name="description" placeholder="description" [(ngModel)]="todo.description"
            #description="ngModel" required>

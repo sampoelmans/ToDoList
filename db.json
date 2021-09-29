@@ -5,7 +5,7 @@
       "title": "school",
       "description": "Grief",
       "catogorie": "school",
-      "color": "lightgreen",
+      "color": "lightcoral",
       "startdate": "2021-09-29T13:49:40.991Z",
       "completed": false
     },
@@ -71,7 +71,31 @@
       "color": "lightblue",
       "startdate": "2021-09-29T13:50:50.068Z",
       "completed": false
+    },
+    {
+      "id": 9,
+      "title": "Frituur coeman",
+      "description": "test met bewijsstuk",
+      "catogorie": "dfvfdv",
+      "color": "lightblue",
+      "startdate": "2021-09-29T17:43:15.750Z",
+      "completed": false
+    },
+    {
+      "id": 10,
+      "title": "Teettt",
+      "description": "testzgfvbfsdvbdf",
+      "color": "lightgreen",
+      "startdate": "2021-09-29T17:52:11.938Z",
+      "completed": false,
+      "itemId": 1
     }
   ],
-  "items": []
+  "items": [
+    {
+      "id": 1,
+      "name": "Stage",
+      "category": "Urgent"
+    }
+  ]
 }

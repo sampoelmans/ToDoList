@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Todo } from "../models/Todo";
+import {Item} from "../models/Item";
 import { Observable } from "rxjs";
 
 const headers = { "content-type": "application/json" };
@@ -20,7 +21,7 @@ export class TodoService {
   }
   getTodoById(id: number): Observable<Todo> {
     return this.http.get<Todo>("http://localhost:3000/todos/" + id);
-}
+  }
   // adds the todo to the list
   addTodo(todo: Todo): Observable<Todo> {
     return this.http.post<Todo>(this.url, todo, { headers: headers });

@@ -6,7 +6,6 @@
     "start": "start npm run api && start ng serve -o --port 5878",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
     "e2e": "ng e2e",
     "api": "json-server --watch db.json"
   },
@@ -25,7 +24,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "rxjs": "~6.5.4",
-    "tslib": "^1.10.0",
+    "tslib": "^2.3.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
