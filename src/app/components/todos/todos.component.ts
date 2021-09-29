@@ -1,7 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { Todo } from "src/app/models/Todo";
 import { TodoService } from "src/app/services/todo.service";
-
+import {Router} from '@angular/router';
+import {Observable, Subscription} from 'rxjs';
 @Component({
   selector: "app-todos",
   templateUrl: "./todos.component.html",
@@ -9,23 +10,25 @@ import { TodoService } from "src/app/services/todo.service";
 })
 export class TodosComponent implements OnInit {
   todos: Todo[];
+  constructor(private todoService: TodoService,private router: Router) { }
 
-  constructor(private todoService: TodoService) {}
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.todoService.getTodos().subscribe(todos => (this.todos = todos));
   }
-
-  // adds the todo in the list
-  addTodo(todo:Todo)
-  {
-    this.todoService.addTodo(todo).subscribe(todos => (this.todos.push(todo)));
+  add() {
+    //Navigate to form in add mode
+    this.router.navigate(['todo/form'], {state: {mode: 'add'}});
   }
 
+  edit(id: number) {
+    //Navigate to form in edit mode
+    this.router.navigate(['todo/form'], {state: {id: id, mode: 'edit'}});
+  }
   // deletes the selected todo from ui and db
   deleteTodo(todo:Todo)
   {
     this.todos = this.todos.filter(t=> t.id != todo.id);
     this.todoService.deleteTodo(todo).subscribe();
   }
+
 }

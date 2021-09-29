@@ -10,18 +10,24 @@ const headers = { "content-type": "application/json" };
 })
 export class TodoService {
   url: string = "http://localhost:3000/todos";
-  limit = "?_limit=7";
+  
 
   constructor(private http: HttpClient) {}
 
-  // fetches list of todos
+  // list of todos
   getTodos(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(`${this.url}${this.limit}`);
+    return this.http.get<Todo[]>(`${this.url}`);
   }
-
+  getTodoById(id: number): Observable<Todo> {
+    return this.http.get<Todo>("http://localhost:3000/todos/" + id);
+}
   // adds the todo to the list
   addTodo(todo: Todo): Observable<Todo> {
     return this.http.post<Todo>(this.url, todo, { headers: headers });
+  }
+  // edit the todo in the list
+  editTodo(id:number,todo: Todo): Observable<Todo> {
+    return this.http.put<Todo>("http://localhost:3000/todos/" + id, todo, { headers: headers });
   }
 
   // updates the status of todo

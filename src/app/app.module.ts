@@ -10,10 +10,10 @@ import { FormsModule } from "@angular/forms";
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
-import { TodosmanageComponent } from './todosmanage/todosmanage.component'
+
 
 @NgModule({
-  declarations: [AppComponent, TodosComponent, TodoItemComponent, AddTodoComponent, HomeComponent, MenuComponent, TodosmanageComponent],
+  declarations: [AppComponent, TodosComponent, TodoItemComponent, AddTodoComponent, HomeComponent, MenuComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

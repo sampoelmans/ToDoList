@@ -1,19 +1,37 @@
 
-    <label for="task">Task:</label>
-    <input type="text" name="task" class="form-control" placeholder="Enter task here" [(ngModel)]="task">
-    <label for="task">Catogorie:</label>
-    <input type="text" name="catogorie" class="form-control" placeholder="Enter catogorie here" [(ngModel)]="catogorie">
-    <label for="task">Description:</label>
-    <textarea type="text" name="description" class="form-control" placeholder="Enter description here" [(ngModel)]="description"></textarea>
+<div class="alert alert-danger" role="alert" *ngIf="isSubmitted && errorMessage">
+  {{errorMessage}}
+</div>
+<form (ngSubmit)="onSubmit()" #todoForm="ngForm">
+  <h1 *ngIf="isAdd"><i class="fa fa-plus"></i> Add new To Do</h1>
+  <h1 *ngIf="isEdit"><i class="fa fa-edit"></i> Edit your To Do</h1>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="title" [(ngModel)]="todo.title"
+           #title="ngModel" required>
+    <div [hidden]="title.valid || title.pristine" class="alert alert-danger">Title is required</div>
+    
+    <label for="category">Category</label>
+    <input type="text" class="form-control" id="category" name="category" placeholder="category" [(ngModel)]="todo.catogorie"
+           #category="ngModel" required>
+    <div [hidden]="category.valid || category.pristine" class="alert alert-danger">Category is required</div>
+    
+    <label for="description">Description</label>
+    <input type="text" class="form-control" id="description" name="description" placeholder="description" [(ngModel)]="todo.description"
+           #description="ngModel" required>
+    <div [hidden]="description.valid || description.pristine" class="alert alert-danger">Description is required</div>
 
+    <label for="color">Color</label>
+    <select  class="form-control" id="color" name="color" placeholder="color" [(ngModel)]="todo.color" [ngStyle]="{'background-color':todo.color}"
+           #color="ngModel" required>
+           <option class="lightblue" value="lightblue">Blue</option>
+           <option class="lightgreen" value="lightgreen">Green</option>
+           <option class="lightyellow" value="lightyellow">Yellow</option>
+           <option class="lightcoral" value="lightcoral">Red</option>
+          </select>
+    <div [hidden]="color.valid || color.pristine" class="alert alert-danger">Color is required</div>
+  </div>
+  <button type="submit" class="btn btn-primary" *ngIf="isAdd" [disabled]="!todoForm.form.valid || isSubmitted"><i class="fa fa-plus"></i> Add</button>
+  <button type="submit" class="btn btn-primary" *ngIf="isEdit" [disabled]="!todoForm.form.valid || isSubmitted"><i class="fa fa-edit"></i> Save</button>
 
-      <label for="task">Color:</label>
-      <select class="form-control" [(ngModel)]="color" [ngStyle]="{'background-color':color}">
-        <option class="lightblue" value="lightblue">Blue</option>
-        <option class="lightgreen" value="lightgreen">Green</option>
-        <option class="lightyellow" value="lightyellow">Yellow</option>
-        <option class="lightcoral" value="lightcoral">Red</option>
-      </select>
-      <br>
-      <a routerLink="/todolist" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><button class="btn btn-primary" type="button" title="Save Task!" (click)= "saveTask()"><i class="fa fa-check"></i>ADD TODO</button></a>
-
+</form>

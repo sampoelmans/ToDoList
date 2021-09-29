@@ -1,7 +1,7 @@
 import { Component, OnInit, Input,  EventEmitter, Output } from "@angular/core";
 import { Todo } from "src/app/models/Todo";
 import { TodoService } from 'src/app/services/todo.service';
-
+import {Router} from '@angular/router';
 @Component({
   selector: "app-todo-item",
   templateUrl: "./todo-item.component.html",
@@ -11,7 +11,7 @@ export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;  
   @Output() delTodo : EventEmitter<any> = new EventEmitter(); 
 
-  constructor(private todoService: TodoService) {}
+  constructor(private router: Router,private todoService: TodoService) {}
 
   ngOnInit(): void {
   }
@@ -38,4 +38,8 @@ export class TodoItemComponent implements OnInit {
       }
       return completedStyle;
    }
+   edit(id: number) {
+    //Navigate to form in edit mode
+    this.router.navigate(['todo/form'], {state: {id: id, mode: 'edit'}});
+  }
 }
