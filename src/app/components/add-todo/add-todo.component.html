@@ -3,8 +3,8 @@
   {{errorMessage}}
 </div>
 <form (ngSubmit)="onSubmit()" #todoForm="ngForm">
-  <h1 *ngIf="isAdd"><i class="fa fa-plus"></i> Add new To Do</h1>
-  <h1 *ngIf="isEdit"><i class="fa fa-edit"></i> Edit your To Do</h1>
+  <h1 *ngIf="isAdd"><i class="fa fa-plus"></i> Add new To Do Item</h1>
+  <h1 *ngIf="isEdit"><i class="fa fa-edit"></i> Edit your To Do Item</h1>
   <div class="form-group">
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" name="title" placeholder="title" [(ngModel)]="todo.title"

@@ -1,6 +1,16 @@
 <div class="alert alert-danger" role="alert" *ngIf="isSubmitted && errorMessage">
   {{errorMessage}}
 </div>
+
+
+    <a routerLink="/todolist" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fa fa-chevron-left"></i></a>
+
+
+    <h1 *ngIf="isAdd"><i class="fa fa-plus"></i> Add new To Do</h1>
+    <h1 *ngIf="isEdit"><i class="fa fa-edit"></i> Edit your To Do</h1>
+
+
+
 <form (ngSubmit)="onSubmit()" #itemForm="ngForm">
   <div class="form-group">
     <label for="category">Category</label>

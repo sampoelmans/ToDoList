@@ -133,6 +133,12 @@
       "name": "test",
       "category": "Test",
       "color": "lightblue"
+    },
+    {
+      "id": 8,
+      "name": "Financials",
+      "category": "enough time",
+      "color": "lightgreen"
     }
   ]
 }

@@ -3,6 +3,11 @@ table
   width: 1000px;
   margin: auto;
   text-align: center;
+  font-size: 15px;
+}
+.table {
+  border-collapse: separate;
+  border-spacing:0 20px;
 }
 td, th {
   vertical-align: middle;
@@ -14,6 +19,8 @@ button {
 
 .addBtn {
   margin-bottom: 2rem;
+  border-radius: 25px;
+  opacity: 80%;
 }
 h1{
   font-weight: bold;
@@ -30,7 +37,7 @@ a
 }
 a:hover
 {
-  color: darkblue;
+  color: darkslategray;
 }
 th
 {
@@ -38,4 +45,16 @@ th
 }
 .addBtn{
   margin-left: 235px;
+}
+
+.btnstyle{
+  border-radius: 25px;
+  width: 100px;
+  opacity: 75%;
+}
+.btnstyle2{
+  border-radius: 25px;
+  width: 140px;
+  opacity: 65%;
+  background-color: white;
 }

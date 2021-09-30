@@ -6,7 +6,7 @@ import {Subscription} from 'rxjs';
 @Component({
   selector: 'app-list-form',
   templateUrl: './list-form.component.html',
-  styleUrls: ['./list-form.component.css']
+  styleUrls: ['./list-form.component.scss']
 })
 export class ListFormComponent implements OnInit, OnDestroy {
   isAdd: boolean = false;
