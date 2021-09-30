@@ -14,7 +14,6 @@ export class AddTodoComponent implements OnInit, OnDestroy{
 
   todoId: number = 0;
   todo : Todo = {id:0, title:"", description:"",color:"", startdate: new Date(),completed:false,itemId:0};
-
   isSubmitted: boolean = false;
   errorMessage: string = "";
 
@@ -22,9 +21,9 @@ export class AddTodoComponent implements OnInit, OnDestroy{
   postTodo$: Subscription = new Subscription();
   putTodo$: Subscription = new Subscription();
 
-  
 
-  constructor(private router: Router, private todoService: TodoService) { 
+
+  constructor(private router: Router, private todoService: TodoService) {
     this.isAdd = this.router.getCurrentNavigation()?.extras.state?.mode === 'add';
     this.isEdit = this.router.getCurrentNavigation()?.extras.state?.mode === 'edit';
     this.todoId = +this.router.getCurrentNavigation()?.extras.state?.id;

@@ -5,7 +5,7 @@
       "title": "school",
       "description": "Grief",
       "catogorie": "school",
-      "color": "lightcoral",
+      "color": "lightblue",
       "startdate": "2021-09-29T13:49:40.991Z",
       "completed": false
     },
@@ -95,7 +95,44 @@
     {
       "id": 1,
       "name": "Stage",
-      "category": "Urgent"
+      "category": "Urgent",
+      "color": "lightcoral"
+    },
+    {
+      "id": 2,
+      "name": "Werk",
+      "category": "Urgent",
+      "color": "lightcoral"
+    },
+    {
+      "id": 3,
+      "name": "School",
+      "category": "Urgent",
+      "color": "lightcoral"
+    },
+    {
+      "id": 4,
+      "name": "Anatomy",
+      "category": "Hold",
+      "color": "lightcoral"
+    },
+    {
+      "id": 5,
+      "name": "stage",
+      "category": "urgent",
+      "color": "lightgreen"
+    },
+    {
+      "id": 6,
+      "name": "Task TODO",
+      "category": "in progress",
+      "color": "lightyellow"
+    },
+    {
+      "id": 7,
+      "name": "test",
+      "category": "Test",
+      "color": "lightblue"
     }
   ]
 }

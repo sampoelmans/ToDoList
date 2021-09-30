@@ -1,0 +1,28 @@
+<h1><img src="../../../assets/logo.png" width="35px" alt="logo"> Your To Do List</h1>
+
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+  {{errorMessage}}
+</div>
+<button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fa fa-plus"></i> Add new TO DO</button>
+<table class="table" *ngIf="items && items.length > 0">
+  <thead>
+      <tr>
+        <th scope="col">Show Items</th>
+
+          <th scope="col">Category</th>
+          <th scope="col">Name</th>
+          <th scope="col">Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let it of items" [ngStyle]="{'background-color':it.color}">
+        <td><a routerLink="/todo" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fa fa-search"></i></a></td>
+        <th scope="row">{{it.category}}</th>
+          <td>{{it.name}}</td>
+          <td>
+              <button type="button" class="btn btn-success" (click)="edit(it.id)"><i class="fa fa-edit"></i></button>
+              <button type="button" class="btn btn-danger" (click)="deleteItem(it)"><i class="fa fa-trash"></i></button>
+          </td>
+      </tr>
+  </tbody>
+</table>
