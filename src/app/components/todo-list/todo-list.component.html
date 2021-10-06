@@ -9,15 +9,15 @@
 
   <div class="list-group" *ngFor="let it of items" >
     
-    <a class="list-group-item list-group-item-action flex-column align-items-start" (click)="onClick(it.id)" [ngStyle]="{'background-color':it.color}">
+    <a class="list-group-item list-group-item-action flex-column align-items-start" (click)="onClick(it.id)" [ngStyle]="{'background-color':it.color}" data-toggle="tooltip" data-placement="top" title="Show To Do Items">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{it.name}}</h5>
         <div>
           
-        <button type="button" class="close" aria-label="Close" (click)="deleteItem(it)">
+        <button type="button" class="close" aria-label="Close" (click)="deleteItem(it)" data-toggle="tooltip" data-placement="top" title="Delete todo">
           <span aria-hidden="true">&times;</span>
         </button>
-        <button type="button" class="close close2" aria-label="Close" (click)="edit(it.id)">
+        <button type="button" class="close close2" aria-label="Close" (click)="edit(it.id)" data-toggle="tooltip" data-placement="top" title="Edit todo">
           <span aria-hidden="true"><i class="fa fa-edit"></i></span>
         </button>
         

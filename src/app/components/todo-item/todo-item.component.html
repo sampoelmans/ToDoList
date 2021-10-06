@@ -1,6 +1,6 @@
 
 <div class="card" style="width: 18rem;" [ngClass]="setCompleted()" [ngStyle]="{'background-color':todo.color}" cdkDrag>
-  <button type="button" class="close" aria-label="Close" (click)="deleteTodo(todo)" title="Delete Task!">
+  <button type="button" class="close" aria-label="Close" (click)="deleteTodo(todo)" title="Delete Task!" data-toggle="tooltip" data-placement="top" title="Delete item">
     <span aria-hidden="true">&times;</span>
   </button>
   <div class="card-body">
@@ -17,10 +17,10 @@
   <div class="card-body">
     <div class="row">
       <div class="col">
-        <button type="button" class="checkbtn" (click)="completeTodo(todo)"><i class="fa fa-check checkicon"></i></button>
+        <button type="button" class="checkbtn" (click)="completeTodo(todo)"><i class="fa fa-check checkicon" data-toggle="tooltip" data-placement="top" title="Done?"></i></button>
       </div>
       <div class="col">
-        <button type="button" class="checkbtn" (click)="edit(todo.id)"><i class="fa fa-edit"></i></button>
+        <button type="button" class="checkbtn" (click)="edit(todo.id)" data-toggle="tooltip" data-placement="top" title="Edit item"><i class="fa fa-edit"></i></button>
       </div>
     </div>
     <br>

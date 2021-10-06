@@ -1,5 +1,5 @@
 
-<button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fa fa-plus"></i> Add new TO DO</button>
+<button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fa fa-plus"></i> Add new TO DO ITEM</button>
 <div class="btn-group float-right " role="group">
   <button type="button" class="btn btn-primary" (click)="div1Function()">Card View</button>
   <button type="button" class="btn btn-primary" (click)="div2Function()">List View</button>
@@ -13,10 +13,10 @@
 
   </div>
 <div cdkDropList *ngIf="div2" (cdkDropListDropped)="drop($event)">
-  <div class="list-group" *ngFor="let todo of todos" [class.is-complete]="todo.completed" cdkDrag >
+  <div class="list-group" *ngFor="let todo of todos" [class.is-complete]="todo.completed" cdkDrag data-toggle="tooltip" data-placement="top" title="Edit item">
     <div class="grid-container">
     <div class="grid-child purple">
-      <input class="checkbx" type="checkbox" (click)="completeTodo(todo)" />
+      <input class="checkbx" type="checkbox" (click)="completeTodo(todo)" data-toggle="tooltip" data-placement="top" title="Done?"/>
     </div>
     <div class="grid-child green">
     <a class="list-group-item list-group-item-action flex-column align-items-start" (click)="edit(todo.id)" [ngStyle]="{'background-color':todo.color}">
@@ -25,7 +25,7 @@
         <h5 class="mb-1">{{todo.title}}</h5>
         <div>
         <small>{{todo.startdate| date:'mediumDate'}}</small>&nbsp;
-        <button type="button" class="close" aria-label="Close" (click)="deleteTodo(todo)">
+        <button type="button" class="close" aria-label="Close" (click)="deleteTodo(todo)" data-toggle="tooltip" data-placement="top" title="Delete item">
           <span aria-hidden="true">&times;</span>
         </button>
         </div>
@@ -33,6 +33,7 @@
       <p class="mb-1">{{todo.description}}</p>
     </a>
     </div>
+    
   </div>
 
   </div>
