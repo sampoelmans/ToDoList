@@ -1,13 +1,13 @@
 
-<div class="card" style="width: 18rem;" [ngClass]="setCompleted()" [ngStyle]="{'background-color':todo.color}">
+<div class="card" style="width: 18rem;" [ngClass]="setCompleted()" [ngStyle]="{'background-color':todo.color}" cdkDrag>
   <button type="button" class="close" aria-label="Close" (click)="deleteTodo(todo)" title="Delete Task!">
     <span aria-hidden="true">&times;</span>
   </button>
   <div class="card-body">
     <h5 class="card-title">{{ todo.title }}</h5>
     <hr>
-    <span class="t-titels">Datum:</span><p class="card-text">{{todo.startdate| date:'yyyy-MM-dd'}}</p>
-    
+    <span class="t-titels">Datum:</span><p class="card-text">{{todo.startdate| date:'mediumDate'}}</p>
+
   </div>
   <hr>
   <div class="card-body">

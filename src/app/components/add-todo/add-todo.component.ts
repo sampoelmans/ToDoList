@@ -1,7 +1,7 @@
 import { Component, OnInit,OnDestroy, EventEmitter, Output } from '@angular/core';
 import { Todo } from "src/app/models/Todo";
 import { TodoService } from "src/app/services/todo.service";
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Observable, Subscription} from 'rxjs';
 @Component({
   selector: 'app-add-todo',
@@ -13,7 +13,7 @@ export class AddTodoComponent implements OnInit, OnDestroy{
   isEdit: boolean = false;
 
   todoId: number = 0;
-  todo : Todo = {id:0, title:"", description:"",color:"", startdate: new Date(),completed:false,itemId:0};
+  todo : Todo = {id:0, title:"", description:"",color:"", startdate: new Date(),completed:false,itemId:this.route.snapshot.params.id};
   isSubmitted: boolean = false;
   errorMessage: string = "";
 
@@ -23,7 +23,7 @@ export class AddTodoComponent implements OnInit, OnDestroy{
 
 
 
-  constructor(private router: Router, private todoService: TodoService) {
+  constructor(private router: Router, private todoService: TodoService,private route: ActivatedRoute) {
     this.isAdd = this.router.getCurrentNavigation()?.extras.state?.mode === 'add';
     this.isEdit = this.router.getCurrentNavigation()?.extras.state?.mode === 'edit';
     this.todoId = +this.router.getCurrentNavigation()?.extras.state?.id;
@@ -34,6 +34,8 @@ export class AddTodoComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
+    
+
   }
   ngOnDestroy(): void {
     this.todo$.unsubscribe();
@@ -46,7 +48,7 @@ export class AddTodoComponent implements OnInit, OnDestroy{
     if (this.isAdd) {
       this.postTodo$ = this.todoService.addTodo(this.todo).subscribe(result => {
                 //all went well
-                this.router.navigateByUrl("/todo");
+                this.router.navigateByUrl("/todo/"+this.route.snapshot.params.id);
               },
               error => {
                 this.errorMessage = error.message;
@@ -60,6 +62,4 @@ export class AddTodoComponent implements OnInit, OnDestroy{
               error => {
                 this.errorMessage = error.message;
               });
-    }
-  }
-}
+            }}}

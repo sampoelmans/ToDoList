@@ -28,6 +28,7 @@ export class ListFormComponent implements OnInit, OnDestroy {
 
     if (this.itemId != null && this.itemId > 0) {
       this.item$ = this.itemService.getItemById(this.itemId).subscribe(result => this.item = result);
+      // console.log(this.item$)
     }
   }
   ngOnDestroy(): void {

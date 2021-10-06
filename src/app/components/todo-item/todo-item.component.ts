@@ -1,19 +1,20 @@
 import { Component, OnInit, Input,  EventEmitter, Output } from "@angular/core";
 import { Todo } from "src/app/models/Todo";
 import { TodoService } from 'src/app/services/todo.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: "app-todo-item",
   templateUrl: "./todo-item.component.html",
   styleUrls: ["./todo-item.component.scss"],
 })
 export class TodoItemComponent implements OnInit {
-  @Input() todo: Todo;  
-  @Output() delTodo : EventEmitter<any> = new EventEmitter(); 
+  @Input() todo: Todo;
+  @Output() delTodo : EventEmitter<any> = new EventEmitter();
 
-  constructor(private router: Router,private todoService: TodoService) {}
+  constructor(private router: Router,private todoService: TodoService,private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    let id = this.route.snapshot.params.id;
   }
 
   // saves the status of the todo as completed/uncompleted
@@ -40,6 +41,6 @@ export class TodoItemComponent implements OnInit {
    }
    edit(id: number) {
     //Navigate to form in edit mode
-    this.router.navigate(['todo/form'], {state: {id: id, mode: 'edit'}});
+    this.router.navigate(['todo/form/'+id], {state: {id: id, mode: 'edit'}});
   }
 }

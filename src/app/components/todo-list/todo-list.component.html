@@ -4,19 +4,28 @@
   {{errorMessage}}
 </div>
 <button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fa fa-plus"></i> Add new TO DO</button>
-<p><i class="fa fa-info-circle if"></i> To show your To Do items click on "Show To Do's"</p>
-<table class="table" *ngIf="items && items.length > 0">
-  <tbody>
-      <tr *ngFor="let it of items" [ngStyle]="{'background-color':it.color}">
-        <td><button type="button" class="btn btnstyle2" (click)="onClick(it.id)"><i class="fa fa-search"></i> Show To Do's</button></td>
-        <th scope="row">{{it.category}}</th>
-          <td>{{it.name}}</td>
-          <td>
-              <button type="button" class="btn btn-success btnstyle" (click)="edit(it.id)"><i class="fa fa-edit"></i>  Edit</button>
-              <button type="button" class="btn btn-danger btnstyle" (click)="deleteItem(it)"><i class="fa fa-trash"></i>  Delete</button>
-          </td>
-      </tr>
-  </tbody>
-</table>
+<p><i class="fa fa-info-circle if"></i> To show your To Do items click on the To Do</p>
+
+
+  <div class="list-group" *ngFor="let it of items" >
+    
+    <a class="list-group-item list-group-item-action flex-column align-items-start" (click)="onClick(it.id)" [ngStyle]="{'background-color':it.color}">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{it.name}}</h5>
+        <div>
+          
+        <button type="button" class="close" aria-label="Close" (click)="deleteItem(it)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <button type="button" class="close close2" aria-label="Close" (click)="edit(it.id)">
+          <span aria-hidden="true"><i class="fa fa-edit"></i></span>
+        </button>
+        
+        </div>
+      </div>
+      <p class="mb-1">{{it.category}}</p>
+    </a>
+    <br>
+  </div>
 
 

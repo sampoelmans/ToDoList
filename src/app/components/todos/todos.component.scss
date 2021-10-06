@@ -6,7 +6,17 @@ h1{
   text-align: center;
 }
 .addBtn {
-  margin-bottom: 2rem;
   border-radius: 25px;
   opacity: 80%;
+}
+
+.is-complete{
+  text-decoration: line-through;
+}
+.list-group-item{
+  border-radius: 25px;
+  border-color: black 50%;
+}
+.close:hover{
+  color: red;
 }

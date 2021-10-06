@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { Item } from "src/app/models/Item";
 import {ItemService} from 'src/app/services/item.service';
@@ -9,6 +9,7 @@ import {Observable, Subscription} from 'rxjs';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit ,OnDestroy{
+  @Input() item: Item;
   items: Item[] = [];
   items$: Subscription = new Subscription();
   deleteItem$: Subscription = new Subscription();

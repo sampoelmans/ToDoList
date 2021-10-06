@@ -10,10 +10,10 @@ const headers = { "content-type": "application/json" };
   providedIn: 'root'
 })
 export class ItemService {
-  url: string = "http://localhost:3000/items";
+  url: string = "http://localhost:3000/items/";
   constructor(private http: HttpClient) { }
   getItemById(id: number): Observable<Item> {
-    return this.http.get<Item>("http://localhost:3000/items" + id);
+    return this.http.get<Item>("http://localhost:3000/items/" + id);
   }
   // list of items
   getItems(): Observable<Item[]> {
