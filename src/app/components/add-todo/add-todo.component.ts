@@ -42,7 +42,9 @@ export class AddTodoComponent implements OnInit, OnDestroy{
     this.postTodo$.unsubscribe();
     this.putTodo$.unsubscribe();
   }
-
+  onClick(){
+    this.router.navigate(['/todo/' + this.todo.itemId]);
+  }
   onSubmit() {
     this.isSubmitted = true;
     if (this.isAdd) {
@@ -62,4 +64,7 @@ export class AddTodoComponent implements OnInit, OnDestroy{
               error => {
                 this.errorMessage = error.message;
               });
-            }}}
+            }
+          }
+        }
+  
