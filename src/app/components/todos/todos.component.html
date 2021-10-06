@@ -12,11 +12,11 @@
     </app-todo-item>
 
   </div>
-<div *ngIf="div2">
-  <div  cdkDropList class="list-group" *ngFor="let todo of todos" [class.is-complete]="todo.completed">
+<div cdkDropList *ngIf="div2" (cdkDropListDropped)="drop($event)">
+  <div class="list-group" *ngFor="let todo of todos" [class.is-complete]="todo.completed" cdkDrag >
     <input type="checkbox" (click)="completeTodo(todo)" />
     
-    <a class="list-group-item list-group-item-action flex-column align-items-start" (click)="edit(todo.id)" [ngStyle]="{'background-color':todo.color}" cdkDrag >
+    <a class="list-group-item list-group-item-action flex-column align-items-start" (click)="edit(todo.id)" [ngStyle]="{'background-color':todo.color}">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{todo.title}}</h5>
         <div>
