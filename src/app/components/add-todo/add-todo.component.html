@@ -2,6 +2,7 @@
 <div class="alert alert-danger" role="alert" *ngIf="isSubmitted && errorMessage">
   {{errorMessage}}
 </div>
+<a routerLink="/todo" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i class="fa fa-chevron-left"></i></a>
 <form (ngSubmit)="onSubmit()" #todoForm="ngForm">
   <h1 *ngIf="isAdd"><i class="fa fa-plus"></i> Add new To Do Item</h1>
   <h1 *ngIf="isEdit"><i class="fa fa-edit"></i> Edit your To Do Item</h1>

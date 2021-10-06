@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Item } from "../models/Item";
 import { Observable } from "rxjs";
+import { Todo } from '../models/Todo';
 
 const headers = { "content-type": "application/json" };
 
@@ -28,5 +29,10 @@ export class ItemService {
   }
   deleteItem(item: Item): Observable<Item> {
     return this.http.delete<Item>(this.url + `/${item.id}`, { headers: headers });
+  }
+
+  //Todos ophalen op basis van ITEM ID
+  getTodosByItemId(itemId: number): Observable<Todo[]> {
+    return this.http.get<Todo[]>("http://localhost:3000/todos?itemId=" + itemId);
   }
 }

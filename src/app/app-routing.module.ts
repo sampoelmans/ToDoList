@@ -10,7 +10,7 @@ import { ListFormComponent } from './components/list-form/list-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'todo', component: TodosComponent },
+  { path: 'todo/:id', component: TodosComponent },
   { path: 'todo/form', component: AddTodoComponent },
   { path: 'todolist', component: TodoListComponent },
   { path: 'item/form', component: ListFormComponent }

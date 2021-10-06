@@ -42,4 +42,7 @@ export class TodoListComponent implements OnInit ,OnDestroy{
   getItems() {
     this.items$ = this.itemService.getItems().subscribe(result => this.items = result);
   }
+  onClick(itemId:number){
+    this.router.navigate(['/todo',itemId])
+  }
 }

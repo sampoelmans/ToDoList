@@ -4,10 +4,11 @@
   {{errorMessage}}
 </div>
 <button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fa fa-plus"></i> Add new TO DO</button>
+<p><i class="fa fa-info-circle if"></i> To show your To Do items click on "Show To Do's"</p>
 <table class="table" *ngIf="items && items.length > 0">
   <tbody>
       <tr *ngFor="let it of items" [ngStyle]="{'background-color':it.color}">
-        <td><a routerLink="/todo" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><button type="button" class="btn btnstyle2"><i class="fa fa-search"></i> Show To Do's</button></a></td>
+        <td><button type="button" class="btn btnstyle2" (click)="onClick(it.id)"><i class="fa fa-search"></i> Show To Do's</button></td>
         <th scope="row">{{it.category}}</th>
           <td>{{it.name}}</td>
           <td>

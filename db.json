@@ -14,7 +14,7 @@
       "title": "Taken",
       "description": "werken aan taken",
       "catogorie": "werk",
-      "color": "lightblue",
+      "color": "lightgreen",
       "startdate": "2021-09-29T13:49:56.982Z",
       "completed": false
     },
@@ -34,7 +34,8 @@
       "catogorie": "fdvgfdv",
       "color": "lightcoral",
       "startdate": "2021-09-29T13:50:17.559Z",
-      "completed": false
+      "completed": false,
+      "itemId": 3
     },
     {
       "id": 5,
@@ -43,7 +44,8 @@
       "catogorie": "fdvdv",
       "color": "lightyellow",
       "startdate": "2021-09-29T13:50:29.806Z",
-      "completed": false
+      "completed": false,
+      "itemId": 3
     },
     {
       "id": 6,
@@ -52,7 +54,8 @@
       "catogorie": "dfvfdv",
       "color": "lightcoral",
       "startdate": "2021-09-29T13:50:34.666Z",
-      "completed": false
+      "completed": false,
+      "itemId": 2
     },
     {
       "id": 7,
@@ -61,16 +64,8 @@
       "catogorie": "dfvdfv",
       "color": "lightgreen",
       "startdate": "2021-09-29T13:50:42.879Z",
-      "completed": false
-    },
-    {
-      "id": 8,
-      "title": "dfvdfv<",
-      "description": "fdvdfv",
-      "catogorie": "<vfvdf",
-      "color": "lightblue",
-      "startdate": "2021-09-29T13:50:50.068Z",
-      "completed": false
+      "completed": false,
+      "itemId": 2
     },
     {
       "id": 9,
@@ -79,25 +74,20 @@
       "catogorie": "dfvfdv",
       "color": "lightblue",
       "startdate": "2021-09-29T17:43:15.750Z",
-      "completed": false
+      "completed": false,
+      "itemId": 2
     },
     {
       "id": 10,
-      "title": "Teettt",
-      "description": "testzgfvbfsdvbdf",
-      "color": "lightgreen",
-      "startdate": "2021-09-29T17:52:11.938Z",
+      "title": "fdsvdf",
+      "description": "fdvfdv",
+      "color": "lightyellow",
+      "startdate": "2021-10-04T09:18:15.259Z",
       "completed": false,
-      "itemId": 1
+      "itemId": 2
     }
   ],
   "items": [
-    {
-      "id": 1,
-      "name": "Stage",
-      "category": "Urgent",
-      "color": "lightcoral"
-    },
     {
       "id": 2,
       "name": "Werk",
