@@ -16,6 +16,9 @@ h1{
 .list-group-item{
   border-radius: 25px;
   border-color: black 50%;
+  :hover{
+    cursor: move;
+  }
 }
 .close:hover{
   color: red;

@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "e2e": "ng e2e",
-    "api": "json-server --watch db.json"
+    "api": "json-server --watch ./json-server-local/db.json"
   },
   "private": true,
   "dependencies": {
