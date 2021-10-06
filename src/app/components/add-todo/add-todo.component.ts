@@ -57,7 +57,7 @@ export class AddTodoComponent implements OnInit, OnDestroy{
     if (this.isEdit) {
       this.putTodo$ = this.todoService.editTodo(this.todoId, this.todo).subscribe(result => {
                 //all went well
-                this.router.navigateByUrl("/todo");
+                this.router.navigateByUrl("/todo/"+this.todo.itemId);
               },
               error => {
                 this.errorMessage = error.message;
