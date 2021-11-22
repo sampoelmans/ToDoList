@@ -1,29 +1,25 @@
-import { Component, OnInit,OnDestroy, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, OnDestroy, EventEmitter, Output } from '@angular/core';
 import { Todo } from "src/app/models/Todo";
 import { TodoService } from "src/app/services/todo.service";
-import {ActivatedRoute, Router} from '@angular/router';
-import {Observable, Subscription} from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
   styleUrls: ['./add-todo.component.scss']
 })
-export class AddTodoComponent implements OnInit, OnDestroy{
+export class AddTodoComponent implements OnInit, OnDestroy {
   isAdd: boolean = false;
   isEdit: boolean = false;
-
   todoId: number = 0;
-  todo : Todo = {id:0, title:"", description:"",color:"", startdate: new Date(),completed:false,itemId:this.route.snapshot.params.id};
+  todo: Todo = { id: 0, title: "", description: "", color: "", startdate: new Date(), completed: false, itemId: this.route.snapshot.params.id };
   isSubmitted: boolean = false;
   errorMessage: string = "";
-
   todo$: Subscription = new Subscription();
   postTodo$: Subscription = new Subscription();
   putTodo$: Subscription = new Subscription();
 
-
-
-  constructor(private router: Router, private todoService: TodoService,private route: ActivatedRoute) {
+  constructor(private router: Router, private todoService: TodoService, private route: ActivatedRoute) {
     this.isAdd = this.router.getCurrentNavigation()?.extras.state?.mode === 'add';
     this.isEdit = this.router.getCurrentNavigation()?.extras.state?.mode === 'edit';
     this.todoId = +this.router.getCurrentNavigation()?.extras.state?.id;
@@ -34,7 +30,6 @@ export class AddTodoComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    
 
   }
   ngOnDestroy(): void {
@@ -42,29 +37,29 @@ export class AddTodoComponent implements OnInit, OnDestroy{
     this.postTodo$.unsubscribe();
     this.putTodo$.unsubscribe();
   }
-  onClick(){
+  onClick() {
     this.router.navigate(['/todo/' + this.todo.itemId]);
   }
   onSubmit() {
     this.isSubmitted = true;
     if (this.isAdd) {
       this.postTodo$ = this.todoService.addTodo(this.todo).subscribe(result => {
-                //all went well
-                this.router.navigateByUrl("/todo/"+this.route.snapshot.params.id);
-              },
-              error => {
-                this.errorMessage = error.message;
-              });
+        //all went well
+        this.router.navigateByUrl("/todo/" + this.route.snapshot.params.id);
+      },
+        error => {
+          this.errorMessage = error.message;
+        });
     }
     if (this.isEdit) {
       this.putTodo$ = this.todoService.editTodo(this.todoId, this.todo).subscribe(result => {
-                //all went well
-                this.router.navigateByUrl("/todo/"+this.todo.itemId);
-              },
-              error => {
-                this.errorMessage = error.message;
-              });
-            }
-          }
-        }
-  
+        //all went well
+        this.router.navigateByUrl("/todo/" + this.todo.itemId);
+      },
+        error => {
+          this.errorMessage = error.message;
+        });
+    }
+  }
+}
+

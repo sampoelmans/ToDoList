@@ -5,27 +5,28 @@
 </div>
 <button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fa fa-plus"></i> Add new TO DO</button>
 <p><i class="fa fa-info-circle if"></i> To show your To Do items click on the To Do</p>
-
-
-  <div class="list-group" *ngFor="let it of items" >
-    
-    <a class="list-group-item list-group-item-action flex-column align-items-start" (click)="onClick(it.id)" [ngStyle]="{'background-color':it.color}" data-toggle="tooltip" data-placement="top" title="Show To Do Items">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{it.name}}</h5>
-        <div>
-          
-        <button type="button" class="close" aria-label="Close" (click)="deleteItem(it)" data-toggle="tooltip" data-placement="top" title="Delete todo">
+<div *ngIf="items.length == 0" class="alert alert-danger" role="alert">
+  No todos have been created yet!
+</div>
+<div class="list-group" *ngFor="let it of items">
+  <a class="list-group-item list-group-item-action flex-column align-items-start" (click)="onClick(it.id)"
+    [ngStyle]="{'background-color':it.category.color}" data-toggle="tooltip" data-placement="top" title="Show To Do Items">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{it.name}}</h5>
+      <div>
+        <button type="button" class="close" aria-label="Close" (click)="deleteItem(it)" data-toggle="tooltip"
+          data-placement="top" title="Delete todo">
           <span aria-hidden="true">&times;</span>
         </button>
-        <button type="button" class="close close2" aria-label="Close" (click)="edit(it.id)" data-toggle="tooltip" data-placement="top" title="Edit todo">
+        <button type="button" class="close close2" aria-label="Close" (click)="edit(it.id)" data-toggle="tooltip"
+          data-placement="top" title="Edit todo">
           <span aria-hidden="true"><i class="fa fa-edit"></i></span>
         </button>
-        
-        </div>
       </div>
-      <p class="mb-1">{{it.category}}</p>
-    </a>
-    <br>
-  </div>
+    </div>
+    <p class="mb-1">{{it.category.name}}</p>
 
 
+  </a>
+  <br>
+</div>

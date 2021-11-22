@@ -1,47 +1,44 @@
-
-.is-complete{
-    text-decoration: line-through;
+.is-complete {
+  text-decoration: line-through;
 }
-.card-title{
+.card-title {
   text-align: center;
   font-size: 25px;
 }
-.t-titels{
+.t-titels {
   font-weight: bold;
 }
 .close:hover {
-   color: red;
+  color: red;
 }
-.close{
+.close {
   font-size: 25px;
 }
-h3{
+h3 {
   font-size: 10px;
 }
-.card{
+.card {
   margin-bottom: 50px;
 }
-.checkbtn{
+.checkbtn {
   background-color: transparent;
   border: none;
   border-color: transparent;
   font-size: 25px;
 }
-.checkicon{
+.checkicon {
   color: green;
 }
-.col{
+.col {
   text-align: center;
 }
-.card-body{
+.card-body {
   padding-bottom: 2px;
   padding-top: 2px;
 }
-.card:active{
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-  0 8px 10px 1px rgba(0, 0, 0, 0.14),
-  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+.card:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
-.card:hover{
+.card:hover {
   cursor: move;
 }

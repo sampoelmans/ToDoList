@@ -1,35 +1,39 @@
-.lightblue{
+.lightblue {
   background-color: lightblue;
 }
-.lightgreen{
+.lightgreen {
   background-color: lightgreen;
-
 }
-.lightyellow{
+.lightyellow {
   background-color: lightyellow;
 }
-.lightcoral{
+.lightcoral {
   background-color: lightcoral;
 }
-.ng-valid[required], .ng-valid.required  {
-  border-left: 5px solid #42A948; /* green */
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948; /* green */
 }
 
-.ng-invalid:not(form)  {
-border-left: 5px solid #a94442; /* red */
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442; /* red */
 }
-form{
+form {
   margin: auto;
 }
-h1{
+h1 {
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
 }
-a{
+a {
   font-size: 35px;
-  color:#007bff !important;
-  :hover{
+  color: #007bff !important;
+  :hover {
     color: darkblue;
   }
+}
+.addBtn {
+  border-radius: 25px !important;
+  width: 200px !important;
 }

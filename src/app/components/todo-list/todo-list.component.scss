@@ -1,6 +1,4 @@
-
-
-h1{
+h1 {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 30px;
@@ -13,21 +11,21 @@ h1{
   opacity: 80%;
 }
 
-.list-group-item{
+.list-group-item {
   border-radius: 25px;
   border-color: black 50%;
 }
-.close:hover{
+.close:hover {
   color: red;
 }
-.close{
+.close {
   font-size: 30px !important;
   margin-top: 6px;
 }
-.close2{
+.close2 {
   margin-top: 15px;
   font-size: 20px !important;
-  :hover{
+  :hover {
     color: darkblue;
   }
 }

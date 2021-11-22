@@ -1,40 +1,46 @@
-
-<button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fa fa-plus"></i> Add new TO DO ITEM</button>
+<button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fa fa-plus"></i> Add new TO DO
+  ITEM</button>
 <div class="btn-group float-right " role="group">
   <button type="button" class="btn btn-primary" (click)="div1Function()">Card View</button>
   <button type="button" class="btn btn-primary" (click)="div2Function()">List View</button>
 </div>
-
-
 <h1><img src="../../../assets/logo.png" width="35px" alt="logo"> Your To Do Items</h1>
+<div *ngIf="todos.length == 0" class="alert alert-danger" role="alert">
+  No todo items have been created yet!
+</div>
+<!-- Card todo's -->
 <div class="row" *ngIf="div1">
-    <app-todo-item class="col-md-6 col-lg-3 d-flex align-items-stretch" *ngFor="let todo of todos" [todo]="todo" (delTodo)="deleteTodo($event)">
-    </app-todo-item>
-
-  </div>
+  <app-todo-item class="col-md-6 col-lg-3 d-flex align-items-stretch" *ngFor="let todo of todos" [todo]="todo"
+    (delTodo)="deleteTodo($event)">
+  </app-todo-item>
+</div>
+<!-- List todo's -->
 <div cdkDropList *ngIf="div2" (cdkDropListDropped)="drop($event)">
-  <div class="list-group" *ngFor="let todo of todos" [class.is-complete]="todo.completed" cdkDrag data-toggle="tooltip" data-placement="top" title="Edit item">
+  <div class="list-group" *ngFor="let todo of todos" [class.is-complete]="todo.completed" cdkDrag data-toggle="tooltip"
+    data-placement="top" title="Edit item">
     <div class="grid-container">
-    <div class="grid-child purple">
-      <input class="checkbx" type="checkbox" (click)="completeTodo(todo)" data-toggle="tooltip" data-placement="top" title="Done?"/>
-    </div>
-    <div class="grid-child green">
-    <a class="list-group-item list-group-item-action flex-column align-items-start" (click)="edit(todo.id)" [ngStyle]="{'background-color':todo.color}">
-      
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{todo.title}}</h5>
-        <div>
-        <small>{{todo.startdate| date:'mediumDate'}}</small>&nbsp;
-        <button type="button" class="close" aria-label="Close" (click)="deleteTodo(todo)" data-toggle="tooltip" data-placement="top" title="Delete item">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
+      <div class="grid-child purple">
+        <input class="checkbx" type="checkbox" (click)="completeTodo(todo)" data-toggle="tooltip" data-placement="top"
+          title="Done?" />
       </div>
-      <p class="mb-1">{{todo.description}}</p>
-    </a>
+      <div class="grid-child green">
+        <a class="list-group-item list-group-item-action flex-column align-items-start" (click)="edit(todo.id)"
+          [ngStyle]="{'background-color':todo.color}">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{todo.title}}</h5>
+            <div>
+              <small>{{todo.startdate| date:'mediumDate'}}</small>&nbsp;
+              <button type="button" class="close" aria-label="Close" (click)="deleteTodo(todo)" data-toggle="tooltip"
+                data-placement="top" title="Delete item">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+          <p class="mb-1">{{todo.description}}</p>
+        </a>
+      </div>
+
     </div>
-    
-  </div>
 
   </div>
 </div>

@@ -1,4 +1,3 @@
-
 <div class="alert alert-danger" role="alert" *ngIf="isSubmitted && errorMessage">
   {{errorMessage}}
 </div>
@@ -9,29 +8,30 @@
   <div class="form-group">
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" name="title" placeholder="title" [(ngModel)]="todo.title"
-           #title="ngModel" required>
+      #title="ngModel" required>
     <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
       Title is required
     </div>
     <label for="description">Description</label>
-    <input type="text" class="form-control" id="description" name="description" placeholder="description" [(ngModel)]="todo.description"
-           #description="ngModel" required>
+    <input type="text" class="form-control" id="description" name="description" placeholder="description"
+      [(ngModel)]="todo.description" #description="ngModel" required>
     <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
       Description is required
     </div>
     <label for="color">Color</label>
-    <select  class="form-control" id="color" name="color" placeholder="color" [(ngModel)]="todo.color" [ngStyle]="{'background-color':todo.color}"
-           #color="ngModel">
-           <option class="lightblue" value="lightblue">Blue</option>
-           <option class="lightgreen" value="lightgreen">Green</option>
-           <option class="lightyellow" value="lightyellow">Yellow</option>
-           <option class="lightcoral" value="lightcoral">Red</option>
-          </select>
+    <select class="form-control" id="color" name="color" placeholder="color" [(ngModel)]="todo.color"
+      [ngStyle]="{'background-color':todo.color}" #color="ngModel">
+      <option class="lightblue" value="lightblue">Blue</option>
+      <option class="lightgreen" value="lightgreen">Green</option>
+      <option class="lightyellow" value="lightyellow">Yellow</option>
+      <option class="lightcoral" value="lightcoral">Red</option>
+    </select>
     <div [hidden]="color.valid || color.pristine" class="alert alert-danger">
       Color is required
     </div>
   </div>
-  <button type="submit" class="btn btn-primary" *ngIf="isAdd" [disabled]="!todoForm.form.valid || isSubmitted"><i class="fa fa-plus"></i> Add</button>
-  <button type="submit" class="btn btn-primary" *ngIf="isEdit" [disabled]="!todoForm.form.valid || isSubmitted"><i class="fa fa-edit"></i> Save</button>
-
+  <button type="submit" class="btn btn-primary addBtn" *ngIf="isAdd" [disabled]="!todoForm.form.valid || isSubmitted"><i
+      class="fa fa-plus"></i> Add</button>
+  <button type="submit" class="btn btn-primary addBtn" *ngIf="isEdit" [disabled]="!todoForm.form.valid || isSubmitted"><i
+      class="fa fa-edit"></i> Save</button>
 </form>

@@ -13,11 +13,13 @@ import { MenuComponent } from './menu/menu.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { ListFormComponent } from './components/list-form/list-form.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { CategoryFormComponent } from './components/category-form/category-form.component';
 
 @NgModule({
-  declarations: [AppComponent, TodosComponent, TodoItemComponent, AddTodoComponent, HomeComponent, MenuComponent, TodoListComponent, ListFormComponent],
+  declarations: [AppComponent, TodosComponent, TodoItemComponent, AddTodoComponent, HomeComponent, MenuComponent, TodoListComponent, ListFormComponent, CategoryListComponent, CategoryFormComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, DragDropModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
