@@ -4,7 +4,25 @@
     {
       "id": 1,
       "name": "Financials",
+      "categoryId": "1",
+      "category": null
+    },
+    {
+      "id": 2,
+      "name": "School",
       "categoryId": "2",
+      "category": null
+    },
+    {
+      "id": 3,
+      "name": "Sportday",
+      "categoryId": "4",
+      "category": null
+    },
+    {
+      "id": 4,
+      "name": "Movie night",
+      "categoryId": "1",
       "category": null
     }
   ],

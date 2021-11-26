@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodosComponent } from './components/todos/todos.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { ListFormComponent } from './components/list-form/list-form.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';

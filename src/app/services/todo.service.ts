@@ -12,7 +12,6 @@ const headers = { "content-type": "application/json" };
 export class TodoService {
   url: string = "http://localhost:3000/todos";
 
-
   constructor(private http: HttpClient) { }
 
   getTodosByItemId(itemId: number): Observable<Todo[]> {
