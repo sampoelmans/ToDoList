@@ -1,5 +1,51 @@
 {
-  "todos": [],
+  "todos": [
+    {
+      "id": 2,
+      "title": "drwgwdgd",
+      "description": "fdgwdrg",
+      "color": "lightcoral",
+      "startdate": "2021-11-26T17:11:27.263Z",
+      "completed": false,
+      "itemId": "1"
+    },
+    {
+      "id": 3,
+      "title": "dgdfwfg",
+      "description": "wdgdwffg",
+      "color": "lightyellow",
+      "startdate": "2021-11-26T17:11:30.870Z",
+      "completed": false,
+      "itemId": "1"
+    },
+    {
+      "id": 5,
+      "title": "test2",
+      "description": "gfdgfdegdf",
+      "color": "lightyellow",
+      "startdate": "2021-11-26T17:15:56.763Z",
+      "completed": false,
+      "itemId": "5"
+    },
+    {
+      "id": 6,
+      "title": "test3",
+      "description": "gdfgdfwg",
+      "color": "lightcoral",
+      "startdate": "2021-11-26T17:16:02.724Z",
+      "completed": false,
+      "itemId": "5"
+    },
+    {
+      "id": 7,
+      "title": "tyhythytdh",
+      "description": "htydh",
+      "color": "lightblue",
+      "startdate": "2021-11-26T17:16:10.918Z",
+      "completed": false,
+      "itemId": "5"
+    }
+  ],
   "items": [
     {
       "id": 1,
@@ -22,7 +68,13 @@
     {
       "id": 4,
       "name": "Movie night",
-      "categoryId": "1",
+      "categoryId": "3",
+      "category": null
+    },
+    {
+      "id": 5,
+      "name": "test",
+      "categoryId": "3",
       "category": null
     }
   ],
@@ -46,6 +98,11 @@
       "id": 4,
       "name": "Minor",
       "color": "lightgreen"
+    },
+    {
+      "id": 5,
+      "name": "test category",
+      "color": "lightcoral"
     }
   ]
 }
